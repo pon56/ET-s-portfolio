@@ -8,17 +8,25 @@
 
     <!-- CSS読み込み -->
     <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
 
+    <!-- フォント -->
+    <!-- <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
+    <link rel="preconnect" href="https://fonts.gstatic.com">
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,400;0,600;0,700;1,200&display=swap"
+        rel="stylesheet"> -->
+
+    <link rel="favicon" href="./img/favicon.png">
     <title>ET's PortFolio</title>
 </head>
 
 <body>
     <!-- ヘッダー -->
-    <header>
-        <div class="header-logo">
-            <img clas="header-logo-img" src="" alt="">
-        </div>
+    <header class="header">
         <nav class="header-nav">
+            <div class="header-logo">
+                <img class="header-logo-img" src="./img/logo_transparent.png" alt="">
+            </div>
             <div class="header-menu">
                 <ui class="header-nav-list">
                     <li class="header-nav-item">
@@ -50,44 +58,48 @@
                 </div>
             </div>
         </div>
+
+        <!-- アバウト -->
         <section class="about" id="About">
             <div class="inner">
                 <h2 class="section-title">About</h2>
-                <div class="about-left">
-                    <img class="abput-img" src="" alt="">
-                </div>
-                <div class="about-right">
-                    <dl class="about-list">
-                        <div class="about-item">
-                            <dt class="about-label">Name</dt>
-                            <dd class="about-content">ET</dt>
+                <div class="about-contents">
+                    <div class="about-left">
+                        <img class="abput-img" src="./img/cookie-the-pom-siNDDi9RpVY-unsplash.jpg" alt="PortFolio-image">
+                    </div>
+                    <div class="about-right">
+                        <dl class="about-list">
+                            <div class="about-item">
+                                <dt class="about-label">Name</dt>
+                                <dd class="about-content">ET</dt>
+                            </div>
+                            <div class="about-item">
+                                <dt class="about-label">Birthday</dt>
+                                <dd class="about-content">1997/9/13</dt>
+                            </div>
+                            <div class="about-item">
+                                <dt class="about-label">GitHub</dt>
+                                <dd class="about-content"><a href=""></a></dt>
+                            </div>
+                            <div class="about-item">
+                                <dt class="about-label">Twitter</dt>
+                                <dd class="about-content"><a href=""> ET</a></dt>
+                            </div>
+                        </dl>
+                        <div class="about-messeage">
+                            <p>初めまして。学生時代に簡単なゲームを作ったことがある経験や
+                                自分の手でTwitterやインスタのような有名サービスを作れる可能性のあることから、
+                                プログラミングに興味をもち、2021年2月ごろから本格的に勉強を始めました。
+                            </p>
+                            <p>
+                                その後、勉強していくうちに、プログラミングにどんどんはまっていき、
+                                趣味としてだけではなく、それで生活をしていきたいと思うようになり、就職活動をしています。
+                            </p>
+                            <p>
+                                現在は、結果がわかりやすく目に見える形で表示されることに魅力を感じ、
+                                HTML、CSS、JavaScriptの所謂フロントエンドを中心に勉強しています。
+                            </p>
                         </div>
-                        <div class="about-item">
-                            <dt class="about-label">Birthday</dt>
-                            <dd class="about-content">1997/9/13</dt>
-                        </div>
-                        <div class="about-item">
-                            <dt class="about-label">GitHub</dt>
-                            <dd class="about-content">ET</dt>
-                        </div>
-                        <div class="about-item">
-                            <dt class="about-label">Twitter</dt>
-                            <dd class="about-content">ET</dt>
-                        </div>
-                    </dl>
-                    <div class="about-messeage">
-                        <p>初めまして。学生時代に簡単なゲームを作ったことがある経験や
-                            自分の手でTwitterやインスタのような有名サービスを作れる可能性のあることから、
-                            プログラミングに興味をもち、2021年2月ごろから本格的に勉強を始めました。
-                        </p>
-                        <p>
-                            その後、勉強していくうちに、プログラミングにどんどんはまっていき、
-                            趣味としてだけではなく、それで生活をしていきたいと思うようになり、就職活動をしています。
-                        </p>
-                        <p>
-                            現在は、結果がわかりやすく目に見える形で表示されることに魅力を感じ、
-                            HTML、CSS、JavaScriptの所謂フロントエンドを中心に勉強しています。
-                        </p>
                     </div>
                 </div>
             </div>
@@ -102,25 +114,31 @@
                 </div>
                 <div class="sites-contents">
                     <div class="sites-item">
-                        <div class="sites-item-img"><img src="" alt="#"></div>
-                        <div class="sites-item-body">
-                            <p class="sites-item-title">自分で文面から写真までデザインした架空のお店のサイトです</p>
-                            <p class="sites-item-txt">HTML,CSS,Boostrap</p>
-                        </div>
+                        <a href="" class="sites-item-link">
+                            <div class="sites-item-img"><img src="./img/sample-corp.png" alt="#"></div>
+                            <div class="sites-item-body">
+                                <p class="sites-item-title">自分で文面から写真までデザインした架空のお店のサイトです</p>
+                                <p class="sites-item-txt">HTML,CSS,Boostrap</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="sites-item">
-                        <div class="sites-item-img"><img src="" alt="#"></div>
-                        <div class="sites-item-body">
-                            <p class="sites-item-title">デザインカンプからのコーディングです</p>
-                            <p class="sites-item-txt">HTML,SCSS,Javascript(jquery)</p>
-                        </div>
+                        <a href="" class="sites-item-link">
+                            <div class="sites-item-img"><img src="./img/sample-corp.png" alt="#"></div>
+                            <div class="sites-item-body">
+                                <p class="sites-item-title">デザインカンプからのコーディングです</p>
+                                <p class="sites-item-txt">HTML,SCSS,Javascript(jquery)</p>
+                            </div>
+                        </a>
                     </div>
                     <div class="sites-item">
-                        <div class="sites-item-img"><img src="" alt="#"></div>
-                        <div class="sites-item-body">
-                            <p class="sites-item-title">デザインカンプからのコーディングです</p>
-                            <p class="sites-item-txt">HTML,SCSS,Javascript(jquery)</p>
-                        </div>
+                        <a href="" class="sites-item-link">
+                            <div class="sites-item-img"><img src="./img/sample-corp.png" alt="#"></div>
+                            <div class="sites-item-body">
+                                <p class="sites-item-title">デザインカンプからのコーディングです</p>
+                                <p class="sites-item-txt">HTML,SCSS,Javascript(jquery)</p>
+                            </div>
+                        </a>
                     </div>
                 </div>
                 <div class="sites-footer">
@@ -130,7 +148,7 @@
         </section>
 
         <!-- アプリ、ゲーム -->
-        <section class="apps" id="Apps">
+        <!-- <section class="apps" id="Apps">
             <div class="inner">
                 <div class="apps-messeage">
                     <h2 class="apps-title"></h2>
@@ -160,16 +178,13 @@
                     </div>
                 </div>
             </div>
-        </section>
+        </section> -->
 
         <!-- スキル -->
         <section class="skils" id="Skills">
             <div class="inner">
                 <div class="skils-messeage">
-                    <h2 class="skils-title">スキル</h2>
-                    <p>
-                        現状に満足したくないので、どのスキルもまだまだ勉強中です。
-                    </p>
+                    <h2 class="skils-title">Skills</h2>
                 </div>
                 <div class="skils-contents">
                     <div class="skils-item">
