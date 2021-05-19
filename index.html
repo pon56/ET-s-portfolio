@@ -7,8 +7,9 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
 
     <!-- CSS読み込み -->
-    <link rel="stylesheet" href="./css/style.css">
+    <link rel="stylesheet" href="./css/reset.css">
     <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.5.3/dist/css/bootstrap.min.css" integrity="sha384-TX8t27EcRE3e/ihU7zmQxVncDAy5uIKz4rEkgIXeMed4M0jlfIDPvg6uqKI2xXr2" crossorigin="anonymous">
+    <link rel="stylesheet" href="./css/style.css">
 
     <!-- フォント -->
     <!-- <link href="https://fonts.googleapis.com/css?family=M+PLUS+1p" rel="stylesheet">
@@ -29,7 +30,7 @@
             </div>
             <div class="header-menu">
                 <ui class="header-nav-list">
-                    <li class="header-nav-item">
+                    <li class="header-nav-item is-active">
                         <a href="#About" class="header-nav-item-link">About</a>
                     </li>
                     <li class="header-nav-item">
@@ -182,13 +183,14 @@
 
         <!-- スキル -->
         <section class="skils" id="Skills">
-            <div class="inner">
-                <div class="skils-messeage">
-                    <h2 class="skils-title">Skills</h2>
-                </div>
+            <div class="skils-messeage">
+                <h2 class="skils-title">Skills</h2>
+            </div>
+            <div class="inner skils-inner">
                 <div class="skils-contents">
                     <div class="skils-item">
                         <h3 class="skils-item-title">HTML,CSS</h3>
+                        <img class="skils-img"　src="./img/html,css-logo.png" alt="">
                         <p class="skils-item-text">
                             基本的なHTML、cssでのサイト作成ができます。
                             また、boostrapやSCSSを使ったより
@@ -197,6 +199,7 @@
                     </div>
                     <div class="skils-item">
                         <h3 class="skils-item-title">Javacript</h3>
+                        <img class="skils-img" src="./img/js-logo.png" alt="">
                         <p class="skils-item-text">
                             jQueryを使いサイトに動きを付けることができます。
                             現在はReactの学習もしています。
@@ -204,6 +207,7 @@
                     </div>
                     <div class="skils-item">
                         <h3 class="skils-item-title">Node.js</h3>
+                        <img class="skils-img" src="./img/node.js-logo.png" alt="">
                         <p class="skils-item-text">
                             簡単なTODOアプリなどの作成を行いました。
                             それに伴い、簡単ですが、バックエンドの知識もあります。
@@ -211,6 +215,7 @@
                     </div>
                     <div class="skils-item">
                         <h3 class="skils-item-title">WordPress(PHP)</h3>
+                        <img class="skils-img" src="./img/wordpress-logo.png" alt="">
                         <p class="skils-item-text">
                             WordPressでのサイトの構築ができるように、基礎的なPHP
                             を学習をしています。
@@ -218,12 +223,14 @@
                     </div>
                     <div class="skils-item">
                         <h3 class="skils-item-title">Adobe XD</h3>
+                        <img class="skils-img" src="./img/adobe-xd-logo.png" alt="">
                         <p class="skils-item-text">
                             XDを使ったサイト設計、デザインカンプからのコーディングができます。
                         </p>
                     </div>
                     <div class="skils-item">
                         <h3 class="skils-item-title">English</h3>
+                        <img class="skils-img" src="./img/e-logo.png" alt="">
                         <p class="skils-item-text">
                             研究資料の英訳、和訳の仕事をしています。
                             サイトの英訳や学習過程での英語の資料も検索も苦なく
@@ -234,7 +241,7 @@
             </div>
         </section>
         <!-- コンタクト -->
-        <secion class="contact" id="Contact">
+        <section class="contact" id="Contact">
             <div class="inner">
                 <h2 class="section-title">Contact</h2>
                 <div class="contact-contents">
@@ -271,7 +278,7 @@
                     </dl>
                 </div>
             </div>
-        </secion>
+        </section>
 
         <!-- フッター -->
         <footer>

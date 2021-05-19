@@ -39,7 +39,7 @@ $accent-color: #fff3e1;
 body {
     font-size: 16px;
     color: $font-color;
-    font-family: "ヒラギノ明朝　ProN", serif;
+    font-family: "Lato","ヒラギノ明朝　ProN", serif;
     line-height: (27 / 16);
 }
 
@@ -91,13 +91,14 @@ img {
 
 // ヘッダー
 .header {
-    height: 100px;
+    height: 80px;
     position: fixed;
     width: 100%;
     box-shadow: 0 3px 3px rgba(#000, 0.16);
     z-index: 100;
     top: 0;
     left: 0;
+    background-color: #ededed;
 
     @include mq('sm') {
         height: 60px;
@@ -105,7 +106,8 @@ img {
 }
 
 .header-logo {
-    width: 205px;
+    margin-left: 3rem;
+    width: 150px;
 
     @include mq("sm") {
         width: 182px;
@@ -116,40 +118,39 @@ img {
     }
 }
 
+.header-menu{
+    margin-left: auto;
+    margin-right: 3rem;
+}
+
 .header-nav {
     display: flex;
     align-items: center;
     margin-left: auto;
+}
 
     @include mq("sm") {
         display: none;
     }
 
-    li {
+    .header-nav-item{
+        list-style: none;
         &:not(:first-child) {
             margin-left: 40px;
         }
-    }
-
-    a {
-        font-family: "Lato", sans-serif;
-        font-weight: 400;
-        color: #fff;
-        text-decoration: none;
-        position: relative;
 
         &.is-active {
-            &::after {
-                content: "";
-                position: absolute;
-                bottom: -8px;
-                left: 0;
-                width: 100%;
-                height: 2px;
-            }
+            list-style-type: disc;
         }
     }
-}
+
+    .header-nav-item-link{
+        font-family:sans-serif;
+        font-weight: 500;
+        color: $font-color;
+        text-decoration: none;
+        position: relative;
+    }
 
 .header-nav-list{
     display: flex;
@@ -162,7 +163,7 @@ img {
     width: 100%;
     background: url(../img/business-2717066_1280.jpg) no-repeat center center / cover;
     position: relative;
-    margin-top: 100px;
+    margin-top: 80px;
 
     @include mq(sm) {
         margin-top: 60px;
@@ -173,7 +174,7 @@ img {
 .top-message{
     position: absolute;
     top: 40%;
-    left: 30%;
+    left: 35%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
@@ -188,7 +189,7 @@ img {
 }
 
 .top-title {
-    font-size: 64px;
+    font-size: 5.5rem;
     font-weight: 700;
     line-height: 1.3;
 
@@ -197,10 +198,111 @@ img {
     }
 }
 
+.top-button{
+
+}
+
+.top-button-link{
+    background: #000;
+    color: #fff;
+}
+
 // アバウト
 .about-contents{
     display: flex;
+    align-items: center;
+}
+
+.about-left{
+    width: 100%;
+    margin-right: 4rem;
+}
+
+.about-item{
+    display: flex;
+
+}
+
+.about-label{
+    width: 40px;
+    margin-right: 4rem;
+    font-weight: bold;
+}
+
+.about-content{
+    a{
+        color:$font-color;
+    }
 }
 
 // 作成したサイト
+.sites-contents{
+    display:flex;
+    flex-wrap: wrap;
+}
 
+.sites-item{
+    width: calc(33.3% - 24px * 2 / 3);
+    border: 1px solid $font-color;
+    box-shadow: 0 3px 3px rgba(#000, 0.16);
+}
+
+.sites-item:not(:nth-child(3n + 1)) {
+    margin-left: 24px;
+  }
+
+.sites-item-img{
+    width: 100%;
+}
+
+.sites-item-link{
+    color: $font-color;
+}
+
+// スキル
+
+.skils-inner{
+    max-width: 1000px;
+    margin: 0 auto;
+    padding: 0 40px;
+    box-sizing: content-box;
+
+    @include mq(sm) {
+        padding: 0 15px;
+    }
+}
+
+.skils-contents{
+    display: flex;
+    flex-wrap: wrap;
+}
+
+.skils-item{
+    width: calc(33.3% - 50px * 2 / 3);
+    border: 2px solid $font-color;
+    border-radius: 80%;
+    text-align: center;
+}
+
+.skils-item:not(:nth-child(3n + 1)) {
+    margin-left: 50px;
+  }
+
+  .skils-item:not(:nth-child(-n+3)) {
+    margin-top: 20px;
+}
+
+.skils-img{
+    margin: 0 auto;
+    width: 50%;
+}
+
+// コンタクト
+.contact{
+    background: url("../img/computer-2242266_1280.jpg")center center / cover;
+}
+
+// フッター
+footer{
+    background-color: #ededed;
+}
