@@ -46,7 +46,7 @@ section {
 
 @media (max-width: 767px) {
   section {
-    margin-top: 96px;
+    margin-top: 2rem;
   }
 }
 
@@ -95,6 +95,12 @@ section {
   }
 }
 
+@media (max-width: 320px) {
+  .section-title::before {
+    left: 28%;
+  }
+}
+
 .section-title::after {
   content: "/>";
   position: absolute;
@@ -113,16 +119,34 @@ section {
 
 @media (max-width: 767px) {
   .section-title::after {
-    width: 42px;
-    height: 3px;
+    right: 16%;
+  }
+}
+
+@media (max-width: 320px) {
+  .section-title::after {
+    right: 0;
   }
 }
 
 @media (max-width: 767px) {
   .section-title {
-    font-size: 26px;
     padding-bottom: 18px;
   }
+}
+
+.drawer-toggle {
+  display: none;
+}
+
+@media (max-width: 767px) {
+  .drawer-toggle {
+    display: block;
+  }
+}
+
+.drawer-overlay {
+  display: none;
 }
 
 .header {
@@ -143,6 +167,15 @@ section {
   }
 }
 
+.header-inner {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+}
+
 .header-logo {
   margin-left: 3rem;
   width: 160px;
@@ -157,7 +190,7 @@ section {
 
 @media (max-width: 767px) {
   .header-logo {
-    width: 182px;
+    width: 6.25rem;
   }
 }
 
@@ -171,12 +204,6 @@ section {
 }
 
 .header-nav {
-  display: -webkit-box;
-  display: -ms-flexbox;
-  display: flex;
-  -webkit-box-align: center;
-      -ms-flex-align: center;
-          align-items: center;
   margin-left: auto;
 }
 
@@ -192,9 +219,22 @@ section {
   margin-left: 40px;
 }
 
+@media (max-width: 767px) {
+  .header-nav-item:not(:first-child) {
+    margin-left: 0;
+  }
+}
+
 @media (max-width: 1200px) {
   .header-nav-item {
     margin-top: 9px;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-nav-item {
+    margin-top: 50px;
+    text-align: center;
   }
 }
 
@@ -209,6 +249,12 @@ section {
 @media (max-width: 1200px) {
   .header-nav-item-link {
     font-size: 1.2rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .header-nav-item-link {
+    font-size: 1.5rem;
   }
 }
 
@@ -227,6 +273,12 @@ section {
           align-items: center;
 }
 
+@media (max-width: 767px) {
+  .header-nav-list {
+    display: block;
+  }
+}
+
 .top {
   height: 600px;
   width: 100%;
@@ -242,14 +294,20 @@ section {
   }
 }
 
+@media (max-width: 767px) {
+  .top {
+    height: 550px;
+  }
+}
+
 .top-message {
   position: absolute;
   top: 50%;
   left: 32%;
   -webkit-transform: translate(-50%, -50%);
           transform: translate(-50%, -50%);
-  text-align: center;
   width: 100%;
+  text-align: center;
 }
 
 @media (max-width: 1200px) {
@@ -261,6 +319,13 @@ section {
 @media (max-width: 767px) {
   .top-message {
     padding: 0 46px;
+    left: 50%;
+  }
+}
+
+@media (max-width: 320px) {
+  .top-message {
+    padding: 0 4px;
   }
 }
 
@@ -283,7 +348,7 @@ section {
 
 @media (max-width: 767px) {
   .top-title {
-    font-size: 32px;
+    font-size: 3.5rem;
   }
 }
 
@@ -295,6 +360,12 @@ section {
 
 .top-button {
   margin-top: 3.5rem;
+}
+
+@media (max-width: 767px) {
+  .top-button {
+    margin-top: 5rem;
+  }
 }
 
 .top-button-link {
@@ -316,6 +387,13 @@ section {
   background: #4c2f28;
   color: #ededed;
   text-shadow: 5px 5px #333;
+}
+
+@media (max-width: 320px) {
+  .top-button-link {
+    padding: 10px 15px;
+    font-size: 1.5rem;
+  }
 }
 
 .about-contents {
@@ -355,7 +433,7 @@ section {
   display: -ms-flexbox;
   display: flex;
   font-size: 1.4rem;
-  font-weight: 700;
+  font-weight: bold;
 }
 
 @media (max-width: 1200px) {
@@ -369,7 +447,13 @@ section {
 
 @media (max-width: 767px) {
   .about-list {
-    font-size: 1rem;
+    font-size: 1.1rem;
+  }
+}
+
+@media (max-width: 320px) {
+  .about-list {
+    font-size: 0.9rem;
   }
 }
 
@@ -380,31 +464,43 @@ section {
   margin-right: 1.5rem;
 }
 
-.about-link {
-  color: #333;
+@media (max-width: 767px) {
+  .about-item {
+    margin-right: 1rem;
+  }
+}
+
+@media (max-width: 767px) {
+  .about-item:first-child {
+    margin-left: 1rem;
+  }
 }
 
 .about-link a {
   color: #333;
 }
 
-.about-messeage {
+.about-link:hover {
+  color: #b3d0d7;
+}
+
+.about-message {
   font-family: "ヒラギノ明朝 ProN";
 }
 
-.about-messeage p {
+.about-message p {
   font-size: 1.2rem;
   margin-top: 30px;
 }
 
 @media (max-width: 1200px) {
-  .about-messeage p {
+  .about-message p {
     margin-top: 50px;
   }
 }
 
 @media (max-width: 767px) {
-  .about-messeage p {
+  .about-message p {
     margin: 30px auto 0 auto;
     width: 80%;
     font-size: 0.9rem;
@@ -486,9 +582,14 @@ section {
   bottom: 1.2rem;
 }
 
+@media (max-width: 320px) {
+  .sites-item-body .sites-item-txt {
+    font-size: 0.9rem;
+  }
+}
+
 .sites-item-img {
   width: 100%;
-  height: 252px;
   -webkit-transition-duration: 0.5s;
           transition-duration: 0.5s;
   overflow: hidden;
@@ -525,7 +626,7 @@ section {
   width: calc(33.3% - 50px * 2 / 3);
   border: 3px solid #b3d0d7;
   text-align: center;
-  padding: 2rem;
+  padding: 1rem;
   -webkit-box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
           box-shadow: 0 3px 3px rgba(0, 0, 0, 0.16);
 }
@@ -533,6 +634,13 @@ section {
 @media (max-width: 1200px) {
   .skills-item {
     width: calc(50% - 50px * 1 / 2);
+  }
+}
+
+@media (max-width: 767px) {
+  .skills-item {
+    width: 100%;
+    margin-bottom: 40px;
   }
 }
 
@@ -552,6 +660,12 @@ section {
   }
 }
 
+@media (max-width: 767px) {
+  .skills-item:not(:nth-child(2n + 1)) {
+    margin-left: 0;
+  }
+}
+
 .skills-item:not(:nth-child(-n + 3)) {
   margin-top: 6rem;
 }
@@ -568,6 +682,12 @@ section {
   }
 }
 
+@media (max-width: 767px) {
+  .skills-item:not(:nth-child(-n + 2)) {
+    margin-top: 0;
+  }
+}
+
 .skills-item-text {
   text-align: left;
   margin-top: 1.5rem;
@@ -576,11 +696,24 @@ section {
 
 .skills-item-title {
   margin: 2rem 0;
+  font-size: 1.5rem;
+}
+
+@media (max-width: 767px) {
+  .skills-item-title {
+    margin: 0 0 1.5rem;
+  }
 }
 
 .skills-img {
   margin: 0 auto;
   width: 50%;
+}
+
+@media (max-width: 767px) {
+  .skills-img {
+    width: 40%;
+  }
 }
 
 .contact {
@@ -590,6 +723,12 @@ section {
 
 .contact-inner {
   padding: 0 6rem;
+}
+
+@media (max-width: 767px) {
+  .contact-inner {
+    padding: 0;
+  }
 }
 
 .contact-form {
@@ -603,6 +742,12 @@ section {
   }
 }
 
+@media (max-width: 767px) {
+  .contact-form {
+    width: 100%;
+  }
+}
+
 .contact-title {
   color: #ededed;
 }
@@ -613,9 +758,27 @@ section {
   }
 }
 
+@media (max-width: 320px) {
+  .contact-title::before {
+    left: 14%;
+  }
+}
+
 @media (max-width: 1200px) {
   .contact-title::after {
     right: 15%;
+  }
+}
+
+@media (max-width: 767px) {
+  .contact-title::after {
+    right: 0;
+  }
+}
+
+@media (max-width: 320px) {
+  .contact-title::after {
+    right: -20%;
   }
 }
 
@@ -677,8 +840,18 @@ textarea {
 }
 
 .contact-message {
-  margin: 0;
+  text-align: center;
+  margin-top: 60px;
   display: none;
+  color: #ededed;
+  font-size: 1.5rem;
+  font-weight: bold;
+  font-family: "ヒラギノ明朝 ProN";
+  text-shadow: 1px 1px #333;
+}
+
+.contact-message.err {
+  color: #f00;
 }
 
 footer {
@@ -689,4 +862,10 @@ footer p {
   margin: 0;
   padding: 3rem;
   text-align: center;
+}
+
+@media (max-width: 767px) {
+  footer p {
+    padding: 1rem;
+  }
 }
