@@ -29,3 +29,7 @@ ol, ul {
   list-style: none;
   list-style-type: none;
 }
+
+a{
+  text-decoration: none;
+}

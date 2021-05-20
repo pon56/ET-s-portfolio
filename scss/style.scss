@@ -2,10 +2,11 @@
 
 $breakpoints: (
     "sm": "(max-width:767px)",
-    "md": "(min-width: 768px)",
+    "md": "(max-width: 1200px)",
+    "lg": "(min-width: 1200)",
 ) !default;
 
-@mixin mq($breakpoint: sp) {
+@mixin mq($breakpoint: sm) {
     @media #{map-get($breakpoints, $breakpoint)} {
         @content;
     }
@@ -13,8 +14,11 @@ $breakpoints: (
 
 // colors
 $font-color: #333;
-$primary-color: #3ea1d1;
-$accent-color: #fff3e1;
+$primary-color: #ededed;
+$accent-color: #b3d0d7;
+
+// フォント
+$font-hi: "ヒラギノ明朝 ProN";
 
 // 全体に共通するスタイル
 .main {
@@ -25,21 +29,10 @@ $accent-color: #fff3e1;
     }
 }
 
-.section-title {
-    font-size: 40px;
-    font-weight: bold;
-    text-align: center;
-    line-height: 1;
-
-    @include mq(sm) {
-        font-size: 30px;
-    }
-}
-
 body {
     font-size: 16px;
     color: $font-color;
-    font-family: "Lato","ヒラギノ明朝　ProN", serif;
+    font-family: "Lato", serif;
     line-height: (27 / 16);
 }
 
@@ -58,36 +51,76 @@ img {
     }
 }
 
+section {
+    margin-top: 5rem;
+
+    @include mq(md) {
+        margin-top: 4rem;
+    }
+
+    @include mq(sm) {
+        margin-top: 96px;
+    }
+}
+
 .section-title {
-    font-size: 48px;
     font-weight: 700;
     text-align: center;
-    padding-bottom: 9px;
+    margin-bottom: 5rem;
     position: relative;
-    font-family: "Lato", sans-serif;
+    font-size: 2.8rem;
+    line-height: 1;
+    padding-top: 3rem;
 
-    // &::after {
-    //     content: "";
-    //     position: absolute;
-    //     left: 50%;
-    //     transform: translateX(-50%);
-    //     bottom: -6px;
-    //     width: 60px;
-    //     height: 4px;
-    //     background: $accent-color;
+    @include mq(md) {
+        margin-bottom: 1px;
+    }
 
-    //     @include mq("sm") {
-    //         width: 42px;
-    //         height: 3px;
-    //     }
-    // }
+    @include mq(sm) {
+        font-size: 30px;
+    }
+
+    &::before {
+        content: "<";
+        position: absolute;
+        left: 39%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+
+        @include mq(md) {
+            left: 35%;
+        }
+
+        @include mq("sm") {
+            width: 42px;
+            height: 3px;
+        }
+    }
+
+    &::after {
+        content: "/>";
+        position: absolute;
+        right: 32%;
+        transform: translateX(-50%);
+        width: 60px;
+        height: 4px;
+
+        @include mq(md) {
+            right: 28%;
+        }
+
+        @include mq("sm") {
+            width: 42px;
+            height: 3px;
+        }
+    }
 
     @include mq("sm") {
         font-size: 26px;
         padding-bottom: 18px;
     }
 }
-
 
 // ヘッダー
 .header {
@@ -98,16 +131,21 @@ img {
     z-index: 100;
     top: 0;
     left: 0;
-    background-color: #ededed;
+    background-color: rgba(237, 237, 237, 0.5);
 
-    @include mq('sm') {
+    @include mq("sm") {
         height: 60px;
     }
 }
 
 .header-logo {
     margin-left: 3rem;
-    width: 150px;
+    width: 160px;
+
+    @include mq(md) {
+        width: 140px;
+        margin-left: 1.5rem;
+    }
 
     @include mq("sm") {
         width: 182px;
@@ -118,7 +156,7 @@ img {
     }
 }
 
-.header-menu{
+.header-menu {
     margin-left: auto;
     margin-right: 3rem;
 }
@@ -129,31 +167,41 @@ img {
     margin-left: auto;
 }
 
-    @include mq("sm") {
-        display: none;
+@include mq("sm") {
+    display: none;
+}
+
+.header-nav-item {
+    list-style: none;
+    &:not(:first-child) {
+        margin-left: 40px;
     }
 
-    .header-nav-item{
-        list-style: none;
-        &:not(:first-child) {
-            margin-left: 40px;
-        }
+    @include mq(md){
+        margin-top: 9px;
+    }
+}
 
-        &.is-active {
-            list-style-type: disc;
-        }
+.header-nav-item-link {
+    font-size: 1.5rem;
+    font-weight: 500;
+    color: $font-color;
+    text-decoration: none;
+    position: relative;
+
+    @include mq(md){
+        font-size: 1.2rem;
     }
 
-    .header-nav-item-link{
-        font-family:sans-serif;
-        font-weight: 500;
-        color: $font-color;
-        text-decoration: none;
-        position: relative;
+    &:hover {
+        transform: translate() all 3s;
+        color: $accent-color;
     }
+}
 
-.header-nav-list{
+.header-nav-list {
     display: flex;
+    align-items: center;
 }
 
 // トップ
@@ -171,10 +219,10 @@ img {
     }
 }
 
-.top-message{
+.top-message {
     position: absolute;
-    top: 40%;
-    left: 35%;
+    top: 50%;
+    left: 32%;
     transform: translate(-50%, -50%);
     text-align: center;
     width: 100%;
@@ -189,120 +237,373 @@ img {
 }
 
 .top-title {
-    font-size: 5.5rem;
-    font-weight: 700;
+    font-size: 6rem;
+    font-weight: 500;
     line-height: 1.3;
+    opacity: 0;
+
+    &.is-ready {
+        text-shadow: 5px 5px $primary-color;
+    }
+
+    @include mq(md) {
+        font-size: 4.5rem;
+    }
 
     @include mq(sm) {
         font-size: 32px;
     }
 }
 
-.top-button{
-
+.top-title span {
+    opacity: 0;
+    -webkit-transition: 0.6s ease-in-out;
+    transition: 0.6s ease-in-out;
 }
 
-.top-button-link{
-    background: #000;
-    color: #fff;
+.top-button {
+    margin-top: 3.5rem;
+}
+
+.top-button-link {
+    display: none;
+    background: $accent-color;
+    color: $font-color;
+    padding: 20px 30px;
+    font-size: 1.8rem;
+    font-weight: bold;
+    border: 1px solid #dddddd;
+    box-shadow: 5px 6px 5px rgba(96, 96, 96, 0.16);
+    text-shadow: 5px 5px $primary-color;
+    transition: all 0.4s;
+
+    &:hover {
+        background: #4c2f28;
+        color: $primary-color;
+        text-shadow: 5px 5px $font-color;
+    }
 }
 
 // アバウト
-.about-contents{
+.about-contents {
+    padding: 3rem 0;
     display: flex;
     align-items: center;
+    flex-direction: row-reverse;
+
+    @include mq("md") {
+        display: block;
+    }
 }
 
-.about-left{
+.about-left {
     width: 100%;
     margin-right: 4rem;
+
+    @include mq(md) {
+        width: 80%;
+        margin: 60px auto 30px auto;
+    }
 }
 
-.about-item{
+.about-list {
     display: flex;
+    font-size: 1.4rem;
+    font-weight: 700;
 
+    @include mq(md) {
+        justify-content: center;
+        margin-bottom: 30px;
+    }
+
+    @include mq(sm){
+        font-size: 1rem;
+    }
 }
 
-.about-label{
-    width: 40px;
-    margin-right: 4rem;
-    font-weight: bold;
+.about-item {
+    display: flex;
+    margin-right: 1.5rem;
 }
 
-.about-content{
-    a{
-        color:$font-color;
+.about-link {
+    color: $font-color;
+    a {
+        color: $font-color;
+    }
+}
+
+.about-messeage {
+    font-family: $font-hi;
+
+
+    p {
+        font-size: 1.2rem;
+        margin-top: 30px;
+
+        @include mq(md) {
+            margin-top: 50px;
+        }
+
+        @include mq(sm) {
+            margin: 30px auto 0 auto;
+            width: 80%;
+            font-size: 0.9rem;
+        }
     }
 }
 
 // 作成したサイト
-.sites-contents{
-    display:flex;
-    flex-wrap: wrap;
+.sites {
+    padding: 4rem 0 7rem;
+    background-color: $primary-color;
 }
 
-.sites-item{
+.sites-contents {
+    display: flex;
+    flex-wrap: wrap;
+
+    @include mq(md) {
+        display: block;
+    }
+}
+
+.sites-item {
     width: calc(33.3% - 24px * 2 / 3);
-    border: 1px solid $font-color;
-    box-shadow: 0 3px 3px rgba(#000, 0.16);
+    border: 1px solid $accent-color;
+    box-shadow: 0 3px 3px rgba($accent-color, 0.16);
+    background: #fff;
+    overflow: hidden;
+
+    @include mq(md) {
+        width: 100%;
+        margin-top: 50px;
+    }
+
+    &:hover {
+        transition-duration: 0.5s;
+        .sites-item-img {
+            transform: scale(1.1, 1.1);
+            transition-duration: 0.5s;
+            box-shadow: none;
+        }
+    }
 }
 
 .sites-item:not(:nth-child(3n + 1)) {
     margin-left: 24px;
-  }
 
-.sites-item-img{
-    width: 100%;
-}
-
-.sites-item-link{
-    color: $font-color;
-}
-
-// スキル
-
-.skils-inner{
-    max-width: 1000px;
-    margin: 0 auto;
-    padding: 0 40px;
-    box-sizing: content-box;
-
-    @include mq(sm) {
-        padding: 0 15px;
+    @include mq(md) {
+        margin-left: 0;
     }
 }
 
-.skils-contents{
+.sites-item-body {
+    font-family: $font-hi;
+    padding: 1.5rem;
+
+    .sites-item-title {
+        font-size: 1.3rem;
+        font-weight: 600;
+    }
+
+    .sites-item-txt {
+        margin-top: 2rem;
+        font-size: 1.2rem;
+        bottom: 1.2rem;
+    }
+}
+
+.sites-item-img {
+    width: 100%;
+    height: 252px;
+    transition-duration: 0.5s;
+    overflow: hidden;
+}
+
+.sites-item-link {
+    color: $font-color;
+}
+
+.sites-footer {
+    text-align: center;
+    margin-top: 5rem;
+}
+
+.sites-footer-link {
+    background: $accent-color;
+    color: $font-color;
+    padding: 1.5rem 4rem;
+    font-size: 1.4rem;
+    font-weight: bold;
+    border: 1px solid #dddddd;
+}
+
+// スキル
+.skills-contents {
+    padding: 3rem 0 5rem;
     display: flex;
     flex-wrap: wrap;
 }
 
-.skils-item{
+.skills-item {
     width: calc(33.3% - 50px * 2 / 3);
-    border: 2px solid $font-color;
-    border-radius: 80%;
+    border: 3px solid $accent-color;
     text-align: center;
+    padding: 2rem;
+    box-shadow: 0 3px 3px rgba(#000, 0.16);
+
+    @include mq(md){
+        width: calc(50% - 50px * 1 / 2);
+    }
 }
 
-.skils-item:not(:nth-child(3n + 1)) {
+.skills-item:not(:nth-child(3n + 1)) {
     margin-left: 50px;
-  }
 
-  .skils-item:not(:nth-child(-n+3)) {
-    margin-top: 20px;
+    @include mq(md){
+        margin-left: 0;
+    }
 }
 
-.skils-img{
+.skills-item:not(:nth-child(2n + 1)) {
+    @include mq(md){
+        margin-left: 50px;
+    }
+}
+
+.skills-item:not(:nth-child(-n + 3)) {
+    margin-top: 6rem;
+
+    @include mq(md){
+        margin-top: 0;
+    }
+}
+
+.skills-item:not(:nth-child(-n + 2)) {
+    @include mq(md){
+        margin-top: 50px;
+    }
+}
+
+.skills-item-text {
+    text-align: left;
+    margin-top: 1.5rem;
+    font-family: $font-hi;
+}
+
+.skills-item-title {
+    margin: 2rem 0;
+}
+
+.skills-img {
     margin: 0 auto;
     width: 50%;
 }
 
 // コンタクト
-.contact{
-    background: url("../img/computer-2242266_1280.jpg")center center / cover;
+.contact {
+    background: url("../img/computer-2242266_1280.jpg") center center / cover;
+    padding: 3rem;
+}
+
+.contact-inner {
+    padding: 0 6rem;
+}
+
+.contact-form {
+    width: 45%;
+    margin: 0 auto;
+
+    @include mq(md){
+        width: 90%;
+    }
+}
+
+.contact-title {
+    color: $primary-color;
+
+    &::before{
+        @include mq(md){
+            left: 26%;
+        }
+    }
+
+    &::after{
+        @include mq(md){
+            right: 15%;
+        }
+    }
+}
+
+.contact-item {
+    text-align: center;
+    margin-top: 2rem;
+}
+
+.contact-item-title {
+    font-weight: bold;
+    text-align: left;
+    font-size: 1.3rem;
+    margin-bottom: 10px;
+    display: block;
+    color: $font-color;
+    text-shadow: 1px 1px $primary-color;
+}
+
+input[type="text"],
+input[type="email"],
+textarea {
+    background: rgba(255, 255, 255, 0.5);
+    border: 1px $primary-color solid;
+    padding: 10px;
+    font-size: 1rem;
+}
+
+input[type="text"],
+input[type="email"] {
+    width: 100%;
+    max-width: 480px;
+}
+
+textarea {
+    width: 100%;
+    max-width: 480px;
+    height: 8rem;
+}
+
+.contact-submit {
+    margin-top: 2.5rem;
+    padding: 0.5rem 2rem;
+    color: $font-color;
+    font-size: 1.2rem;
+
+    &.active {
+        transition: all 0.4s;
+        background: $accent-color;
+        color: $font-color;
+        border: 1px solid #dddddd;
+
+        &:hover {
+            background: #4c2f28;
+            color: $primary-color;
+            text-shadow: 5px 5px $font-color;
+        }
+    }
+}
+
+.contact-message {
+    margin: 0;
+    display: none;
 }
 
 // フッター
-footer{
-    background-color: #ededed;
+footer {
+    background-color: $primary-color;
+
+    p {
+        margin: 0;
+        padding: 3rem;
+        text-align: center;
+    }
 }
