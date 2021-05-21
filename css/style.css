@@ -330,10 +330,11 @@ section {
 }
 
 .top-title {
-  font-size: 6rem;
-  font-weight: 500;
+  font-size: 8rem;
+  font-weight: 700;
   line-height: 1.3;
   opacity: 0;
+  font-family: 'Tangerine', cursive;
 }
 
 .top-title.is-ready {
@@ -342,13 +343,13 @@ section {
 
 @media (max-width: 1200px) {
   .top-title {
-    font-size: 4.5rem;
+    font-size: 6.5rem;
   }
 }
 
 @media (max-width: 767px) {
   .top-title {
-    font-size: 3.5rem;
+    font-size: 5rem;
   }
 }
 
@@ -381,12 +382,20 @@ section {
   text-shadow: 5px 5px #ededed;
   -webkit-transition: all 0.4s;
   transition: all 0.4s;
+  font-family: 'Tangerine', cursive;
 }
 
 .top-button-link:hover {
   background: #4c2f28;
   color: #ededed;
   text-shadow: 5px 5px #333;
+}
+
+@media (max-width: 767px) {
+  .top-button-link {
+    padding: 15px 20px;
+    font-size: 1.6rem;
+  }
 }
 
 @media (max-width: 320px) {
@@ -846,7 +855,6 @@ textarea {
   color: #ededed;
   font-size: 1.5rem;
   font-weight: bold;
-  font-family: "ヒラギノ明朝 ProN";
   text-shadow: 1px 1px #333;
 }
 
