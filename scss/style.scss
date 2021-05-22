@@ -463,6 +463,7 @@ section {
     }
 
     &:hover {
+        background: $accent-color;
         transition-duration: 0.5s;
         .sites-item-img {
             transform: scale(1.1, 1.1);
